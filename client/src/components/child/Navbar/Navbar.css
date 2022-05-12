@@ -1,0 +1,54 @@
+nav a {
+  color: black !important;
+}
+
+/* .navbar-brand img {
+  display: inline-block;
+  width: 25%;
+  height: auto;
+} */
+.navbar-nav .nav-item a {
+  margin: auto;
+}
+.navbar-nav input {
+  margin: auto;
+}
+form {
+  width: 50%;
+}
+.form-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-input input {
+  padding-right: 40px;
+  border-radius: 20px !important;
+}
+.options li button {
+  display: flex;
+  align-items: center;
+}
+
+
+/* for speech component */
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  .theme-toggle {
+    margin: auto;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+ .theme-toggle {
+   margin: auto;
+ }
+
+}

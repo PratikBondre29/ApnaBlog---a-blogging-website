@@ -1,0 +1,204 @@
+import React from 'react';
+import First from "./Group 109.svg";
+import Second from "./Group 90.svg";
+import Third from "./Group 124.svg";
+import Fourth from "./Group 121.svg";
+import Fifth from "./Group 113.svg";
+import {
+  CDBSidebar,
+  CDBSidebarContent,
+  CDBSidebarFooter,
+  CDBSidebarHeader,
+  CDBSidebarMenu,
+  CDBSidebarMenuItem,
+} from 'cdbreact';
+import { NavLink } from 'react-router-dom';
+
+
+const Sidebar = () => {
+  return (
+        
+            <div
+      style={{ display:"flex", height: '100vh', overflow: 'scroll initial'  }}
+    >
+      <CDBSidebar textColor="#fff" backgroundColor="#fff">
+        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>} >
+          <a
+            href="/"
+            className="text-decoration-none"
+            style={{ color: 'inherit' }}
+          >
+            Sidebar
+          </a>
+          
+        </CDBSidebarHeader>
+
+        <CDBSidebarContent className="sidebar-content" >
+          <CDBSidebarMenu>
+            <NavLink exact to="/" activeClassName="activeClicked" style={{color:"black"}}>
+              
+              <CDBSidebarMenuItem ><img src={First}  /></CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/tables" activeClassName="activeClicked" style={{color:"black"}}>
+              <CDBSidebarMenuItem ><img src={Second}  /></CDBSidebarMenuItem>
+              
+            </NavLink>
+            <NavLink exact to="/profile" activeClassName="activeClicked" style={{color:"black"}}>
+              <CDBSidebarMenuItem ><img src={Third}  /></CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/analytics" activeClassName="activeClicked" style={{color:"black"}}>
+              <CDBSidebarMenuItem>
+              <img src={Fourth}  />
+              </CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink
+              exact
+              to="/hero404"
+              target="_blank"
+              activeClassName="activeClicked"
+              style={{color:"black"}}
+            >
+              <CDBSidebarMenuItem >
+              <img src={Fifth}  />
+
+              </CDBSidebarMenuItem>
+            </NavLink>
+          </CDBSidebarMenu>
+        </CDBSidebarContent>
+
+        <CDBSidebarFooter style={{ textAlign: 'center' }}>
+          <div
+            style={{
+              padding: '20px 5px',
+              backgroundColor:"#E951B8"
+            }}
+          >
+            <i class="fas fa-arrow-right" style={{color:"white"}}></i>
+
+          </div>
+        </CDBSidebarFooter>
+      </CDBSidebar>
+    </div>
+            
+           
+    
+  );
+};
+
+export default Sidebar;
+
+*****************
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Loader from "../components/Loader";
+import Sidebar from "../components/Sidebar";
+import moment from "moment";
+import { DatePicker, Space } from "antd";
+import "antd/dist/antd.css";
+import Navbar from "../components/Navbar";
+import Carousel from 'react-elastic-carousel';
+
+// import 'react-calendar/dist/Calendar.css';
+
+import Calendar from "react-calendar";
+
+import Img1 from "./images/img1.jpg"; 
+import Img2 from "./images/img2.jpg"; 
+import Img3 from "./images/img3.jpg"; 
+import Img4 from "./images/img4.jpg"; 
+
+import Item from "./Item";
+// import {Swiper } from 'swiper';
+import "./Sample.less";
+
+const { RangePicker } = DatePicker;
+
+
+
+
+function Homescreen() {
+  const [date, setDate] = useState(new Date());
+
+  const onChange = date => {
+    setDate(date);
+  };
+ 
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 100, itemsToShow: 2 },
+    { width: 500, itemsToShow: 3 },
+    { width: 700, itemsToShow: 6 },
+  ];
+
+  return (
+    <div className="container-fluid">
+      <div className="row">
+        <div>
+          <Sidebar />
+        </div>
+
+        <div>
+          <div>
+            <Navbar />
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          
+          <h1>hey there</h1>
+
+           {/* <div style={{width:"500px",backgroundColor:"#FFFFFF"}} >
+           <Calendar className="ml-5 mb-5" style={{backgroundColor:"#FFFFFF"}}  showWeekNumbers onChange={onChange} value={date} />
+
+           </div> */}
+
+<div className="Sample">
+      <header>
+        <h1>react-calendar sample page</h1>
+      </header>
+      <div className="Sample__container">
+        <main className="Sample__container__content">
+          <Calendar
+            onChange={onChange}
+            showWeekNumbers
+            value={date}
+          />
+        </main>
+      </div>
+    </div>
+
+          {/* {console.log(date)} */}
+      {/* {date.toString()} */}
+
+          {/* <h1 style={{ textAlign: "center" }}>Example to setup your carousel in react</h1> */}
+      <div className="ml-5" style={{width:"1590px",backgroundColor:"#FFFFFF",padding:"20px",paddingTop:"80px"}}>
+        <Carousel breakPoints={breakPoints}>
+          <Item>
+            <img src={Img1} width="210px" height="100%" style={{borderRadius:"10px"}}/>
+          </Item>
+          <Item><img width="210px" height="100%" src={Img2} style={{borderRadius:"10px"}}/></Item>
+          <Item><img src={Img3} width="210px" height="100%" style={{borderRadius:"10px"}}/></Item>
+          <Item><img src={Img4} width="210px" height="100%" style={{borderRadius:"10px"}}/></Item>
+          <Item>
+            <img src={Img1} width="210px" height="100%" style={{borderRadius:"10px"}}/>
+          </Item>
+          <Item><img src={Img2} width="210px" height="100%" style={{borderRadius:"10px"}}/></Item>
+          <Item><img src={Img3} width="210px" height="100%" style={{borderRadius:"10px"}}/></Item>
+          <Item><img src={Img4} width="210px" height="100%" style={{borderRadius:"10px"}}/></Item>
+          
+          
+        </Carousel>
+      </div>
+          
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Homescreen;
+
+// #E951B8

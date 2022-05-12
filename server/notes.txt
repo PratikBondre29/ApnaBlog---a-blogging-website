@@ -1,0 +1,9 @@
+using bootstrap,react bootstrap and antd
+
+step 1 = designing of navbar
+
+////
+folder structure is like
+1.components
+2.screens
+3 static files (not present in this project)

@@ -1,0 +1,22 @@
+.card-body p {
+  font-size: 15px;
+}
+.card-body h2 {
+  font-size: 22px;
+  margin-top: 10px;
+}
+.updowncom {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.readmore {
+  display: flex;
+  margin: 10px 5px;
+  justify-content: center;
+}
+.card-toggle {
+  background-color: rgb(65, 64, 64);
+  color: white;
+  transition: 0.5s;
+}

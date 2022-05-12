@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Tourney:ital,wght@0,300;1,200&display=swap");
+
+.box {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+  font-family: "Tourney", cursive;
+  margin: 0;
+  background: #021841;
+}
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.svg-in {
+  z-index: 1000;
+}
+svg text {
+  stroke: #0ed1c1;
+  font-size: 85px;
+  stroke-width: 1;
+  animation: animate 6s infinite alternate;
+}
+
+@keyframes animate {
+  0% {
+    stroke-dasharray: 0 50%;
+    fill: transparent;
+  }
+  100% {
+    stroke-dasharray: 50% 0;
+    fill: #0ed1c1;
+  }
+}
+
+@media (max-width: 600px) {
+  svg text {
+    font-size: 200px;
+    stroke-width: 1.5;
+  }
+}

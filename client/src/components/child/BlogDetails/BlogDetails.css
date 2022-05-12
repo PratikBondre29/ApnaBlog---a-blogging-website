@@ -1,0 +1,8 @@
+.blogdetails h1,
+p {
+  color: black;
+}
+.badges {
+  display: flex;
+  justify-content: flex-start;
+}
